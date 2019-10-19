@@ -10,7 +10,7 @@
         }
 
         .form-container {
-            width: 400px;
+            width: 500px;
             margin: auto;
         }
 
@@ -19,6 +19,42 @@
             margin-top: 40px;
             padding-top: 20px;
         }
+
+        .radio-tipo .radio-fields {
+	        display: none;
+        }
     </style>
+    <script>  
+        function show1(){
+            var DadosPessoa = document.getElementById('DadosPessoa');
+            var DadosCanil = document.getElementById('DadosCanil');
+            
+            DadosPessoa.style.display ='block';
+            DadosCanil.style.display ='none';
+
+            var auxPessoa = Array.from(DadosPessoa.children).filter(function (c) {
+                c.required = true;
+            });
+
+            var auxCanil = Array.from(DadosCanil.children).filter(function (c) {
+                c.required = false;
+            });
+        }
+        function show2(){
+            var DadosPessoa = document.getElementById('DadosPessoa');
+            var DadosCanil = document.getElementById('DadosCanil');
+            
+            DadosPessoa.style.display ='none';
+            DadosCanil.style.display ='block';
+            
+            var auxPessoa = Array.from(DadosPessoa.children).filter(function (c) {
+                c.required = false;
+            });
+
+            var auxCanil = Array.from(DadosCanil.children).filter(function (c) {
+                c.required = true;
+            });  
+        }
+    </script>
 </head>
 <body>
